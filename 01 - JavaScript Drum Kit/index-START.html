@@ -66,19 +66,18 @@
     let drumAudio = document.querySelector(`audio[data-key='${keyCode}']`);
     addPlayingClass(drumElement);
     drumAudio.play();
-
-
+    setTimeout( () => {removePlayingClass(drumElement);}, 150);
   };
 
   addPlayingClass = (drumElement) => {
     drumElement.classList.add("playing");
   };
 
-/*
+
   removePlayingClass = (drumElement) => {
+    console.log("Hello");
     drumElement.classList.remove("playing");
   };
-*/
 
 </script>
 
