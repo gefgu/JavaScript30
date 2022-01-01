@@ -8,7 +8,7 @@ Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
 
 # Link To My Solutions
 
-[01 - JavaScript Drum Kit](01 - JavaScript Drum Kit\index-START.html)
+[01 - JavaScript Drum Kit](https://github.com/gefgu/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
 
 ## Community #JavaScript30 Content
 
