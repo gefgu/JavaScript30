@@ -60,24 +60,35 @@
 
 <script>
 
-  document.onkeypress = function(e) {
-    let keyCode = e.keyCode - 32;
+  function playSound(e) {
+    let keyCode = e.keyCode;
     let drumElement = document.querySelector(`div[data-key='${keyCode}']`);
     let drumAudio = document.querySelector(`audio[data-key='${keyCode}']`);
+
+    if (!drumAudio) return;
+
     addPlayingClass(drumElement);
+    drumAudio.currentTime = 0;
     drumAudio.play();
-    setTimeout( () => {removePlayingClass(drumElement);}, 150);
-  };
+  }
+
+  function removeTransition(e) {
+    if(e.propertyName !== "transform") return;
+    removePlayingClass(this);
+  }
 
   addPlayingClass = (drumElement) => {
     drumElement.classList.add("playing");
   };
 
-
   removePlayingClass = (drumElement) => {
-    console.log("Hello");
     drumElement.classList.remove("playing");
   };
+
+  const keys = document.querySelectorAll(".key");
+  keys.forEach(key => key.addEventListener("transitionend", removeTransition))
+
+  window.addEventListener("keydown", playSound);
 
 </script>
 
