@@ -62,11 +62,23 @@
 
   document.onkeypress = function(e) {
     let keyCode = e.keyCode - 32;
-    console.log(keyCode);
-    let drumElement = document.querySelectorAll(`div[data-key='${keyCode}']`)[0];
-    console.log(drumElement);
+    let drumElement = document.querySelector(`div[data-key='${keyCode}']`);
+    let drumAudio = document.querySelector(`audio[data-key='${keyCode}']`);
+    addPlayingClass(drumElement);
+    drumAudio.play();
+
+
+  };
+
+  addPlayingClass = (drumElement) => {
     drumElement.classList.add("playing");
   };
+
+/*
+  removePlayingClass = (drumElement) => {
+    drumElement.classList.remove("playing");
+  };
+*/
 
 </script>
 
