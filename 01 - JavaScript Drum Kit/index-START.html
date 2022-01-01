@@ -45,6 +45,7 @@
       <kbd>L</kbd>
       <span class="sound">tink</span>
     </div>
+
   </div>
 
   <audio data-key="65" src="sounds/clap.wav"></audio>
@@ -60,8 +61,12 @@
 <script>
 
   document.onkeypress = function(e) {
-    console.log(e.keyCode)
-  }
+    let keyCode = e.keyCode - 32;
+    console.log(keyCode);
+    let drumElement = document.querySelectorAll(`div[data-key='${keyCode}']`)[0];
+    console.log(drumElement);
+    drumElement.classList.add("playing");
+  };
 
 </script>
 
