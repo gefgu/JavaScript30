@@ -63,23 +63,23 @@
       position: absolute;
       top: 50%;
       transform-origin: 100%;
-      transform: rotate(90deg);
-      transition: transform .05s ease;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
   </style>
 
   <script>
 
-    function updateClock() {
-      const currentDate = new Date();
-      let second = currentDate.getSeconds();
-      let minute = currentDate.getMinutes() + second/60;
-      let hour = currentDate.getHours() + minute/60 + second/3600;
+    const hourHand = document.querySelector("div.hour-hand");
+    const minuteHand = document.querySelector("div.min-hand");
+    const secondHand = document.querySelector("div.second-hand");
 
-      let hourHand = document.querySelector("div.hour-hand");
-      let minuteHand = document.querySelector("div.min-hand");
-      let secondHand = document.querySelector("div.second-hand");
+    function updateClock() {
+      const now = new Date();
+      let second = now.getSeconds();
+      let minute = now.getMinutes() + second/60;
+      let hour = now.getHours() + minute/60 + second/3600;
 
       let secondDegree = 90 + second * 6;
       let minuteDegree = 90 + minute * 6;
