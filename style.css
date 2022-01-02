@@ -1,0 +1,22 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.solution-link, .solution-link:visited {
+    color: black;
+    text-decoration-line: none;
+    font-size: 1.2em;
+}
+
+.solutions {
+    display: flex;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}

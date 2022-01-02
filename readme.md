@@ -1,14 +1,14 @@
 ﻿![](https://javascript30.com/images/JS3-social-share.png)
 
+# Link To My Solutions
+
+https://gefgu.github.io/JavaScript30/
+
 # JavaScript30
 
 Starter Files + Completed solutions for the JavaScript 30 Day Challenge.
 
 Grab the course at [https://JavaScript30.com](https://JavaScript30.com)
-
-# Link To My Solutions
-
-[01 - JavaScript Drum Kit](https://github.com/gefgu/JavaScript30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
 
 ## Community #JavaScript30 Content
 
