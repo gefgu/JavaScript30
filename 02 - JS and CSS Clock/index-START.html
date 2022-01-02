@@ -64,13 +64,33 @@
       top: 50%;
       transform-origin: 100%;
       transform: rotate(90deg);
-      transition: transform .2s linear;
+      transition: transform .05s ease;
     }
 
   </style>
 
   <script>
 
+    function updateClock() {
+      const currentDate = new Date();
+      let second = currentDate.getSeconds();
+      let minute = currentDate.getMinutes() + second/60;
+      let hour = currentDate.getHours() + minute/60 + second/3600;
+
+      let hourHand = document.querySelector("div.hour-hand");
+      let minuteHand = document.querySelector("div.min-hand");
+      let secondHand = document.querySelector("div.second-hand");
+
+      let secondDegree = 90 + second * 6;
+      let minuteDegree = 90 + minute * 6;
+      let hourDegree = (hour - 9) * 30;
+
+      secondHand.style.transform = `rotate(${secondDegree}deg)`;
+      minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+      hourHand.style.transform = `rotate(${hourDegree}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
 
   </script>
 </body>
