@@ -27,8 +27,8 @@
 
     :root {
       --spacing: 10px;
-      --blur-effect: 10px;
-      --base-color: #ffc600;
+      --blur: 10px;
+      --base: #ffc600;
     }
 
 
@@ -59,12 +59,12 @@
 
     img {
       padding: var(--spacing);
-      background-color: var(--base-color);
-      filter: blur(var(--blur-effect));
+      background-color: var(--base);
+      filter: blur(var(--blur));
     }
 
     .hl {
-      color: var(--base-color);
+      color: var(--base);
     }
 
   </style>
@@ -72,21 +72,15 @@
   <script>
     const root = document.documentElement;
 
-    const spacingInput = document.querySelector("[name='spacing']");
-    const blurInput = document.querySelector("[name='blur']");
-    const colorInput = document.querySelector("[name='base']");
+    const inputs = document.querySelectorAll(".controls input");
 
-    spacingInput.oninput = () => {
-      root.style.setProperty("--spacing", spacingInput.value + "px");
-    };
-    
-    blurInput.oninput = () => {
-      root.style.setProperty("--blur-effect", blurInput.value + "px");
-    };
+    function handleUpdate() {
+      const suffix = this.dataset.sizing || "";
+      root.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
 
-    colorInput.oninput = () => {
-      root.style.setProperty("--base-color", colorInput.value);
-    };
+    inputs.forEach(input => input.addEventListener("change", handleUpdate));
+    inputs.forEach(input => input.addEventListener("mousemove", handleUpdate));
 
   </script>
 
