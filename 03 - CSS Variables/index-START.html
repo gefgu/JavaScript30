@@ -27,8 +27,8 @@
 
     :root {
       --spacing: 10px;
-      --blur-effect: 1px;
-      --base-color: black;
+      --blur-effect: 10px;
+      --base-color: #ffc600;
     }
 
 
@@ -70,6 +70,24 @@
   </style>
 
   <script>
+    const root = document.documentElement;
+
+    const spacingInput = document.querySelector("[name='spacing']");
+    const blurInput = document.querySelector("[name='blur']");
+    const colorInput = document.querySelector("[name='base']");
+
+    spacingInput.oninput = () => {
+      root.style.setProperty("--spacing", spacingInput.value + "px");
+    };
+    
+    blurInput.oninput = () => {
+      root.style.setProperty("--blur-effect", blurInput.value + "px");
+    };
+
+    colorInput.oninput = () => {
+      root.style.setProperty("--base-color", colorInput.value);
+    };
+
   </script>
 
 </body>
