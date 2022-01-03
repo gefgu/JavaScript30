@@ -7,13 +7,25 @@ body,html {
 .solution-link, .solution-link:visited {
     color: black;
     text-decoration-line: none;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .solutions {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+.solutions-list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0 15px;
 }
 
 header {
@@ -21,3 +33,4 @@ header {
     justify-content: center;
     margin-bottom: 10px;
 }
+
