@@ -22,6 +22,17 @@
 
   <style>
     /*
+      Variables
+    */
+
+    :root {
+      --spacing: 10px;
+      --blur-effect: 1px;
+      --base-color: black;
+    }
+
+
+    /*
       misc styles, nothing to do with CSS variables
     */
 
@@ -47,9 +58,13 @@
     */
 
     img {
-      padding: 50px;
-      background-color: black;
-      filter: blur(2px);
+      padding: var(--spacing);
+      background-color: var(--base-color);
+      filter: blur(var(--blur-effect));
+    }
+
+    .hl {
+      color: var(--base-color);
     }
 
   </style>
