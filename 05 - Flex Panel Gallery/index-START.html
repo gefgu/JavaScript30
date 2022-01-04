@@ -123,23 +123,13 @@
   <script>
     const panels = document.querySelectorAll(".panel");
 
-    function toggleOpenActive(e) {
-      console.log(e.propertyName);
-      if (e.propertyName != "font-size") {return;}
-      const attributeName = "open-active";
-      if (this.classList.contains(attributeName)) {
-        this.classList.remove(attributeName);
-      } else {
-        this.classList.add(attributeName);
-      }
+    function toggleOpen() {
+      this.classList.toggle("open");
     }
 
-    function toggleOpen() {
-      const attributeName = "open";
-      if (this.classList.contains(attributeName)) {
-        this.classList.remove(attributeName);
-      } else {
-        this.classList.add(attributeName);
+    function toggleOpenActive(e) {
+      if (e.propertyName.includes("flex")) {
+        this.classList.toggle("open-active");
       }
     }
 
